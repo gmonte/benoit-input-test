@@ -33,7 +33,7 @@ const InputHidden = () => {
         onBlur={setFocus}
       />
       <p>
-        <b>Value setted:</b> "{value}"
+        <b>Setted value:</b> "{value}"
       </p>
     </div>
   )
