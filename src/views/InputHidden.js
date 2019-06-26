@@ -1,27 +1,33 @@
-import React, { useState, useRef } from 'react'
-import get from 'lodash/get'
+import React, { useState, useRef, useEffect } from 'react'
 
 const InputHidden = () => {
   const [value, setValue] = useState('')
   const inputRef = useRef(null)
 
-  const returnFocus = () => {
+  const setFocus = () => {
     inputRef.current.focus()
   }
 
+  useEffect(() => {
+    setFocus()
+  })
+
   return (
     <div>
-      <input
+      <div
+        contentEditable
         ref={inputRef}
-        autoFocus
         style={{
           width: 0,
           height: 0,
-          opacity: 0
+          opacity: 0,
+          position: 'absolute',
+          overflow: 'hidden',
+          border: '1px solid transparent'
         }}
         value={value}
-        onChange={({ target: { value } }) => setValue(value)}
-        onBlur={returnFocus}
+        onInput={({ target: { innerText } }) => setValue(innerText)}
+        onBlur={setFocus}
       />
       <p>
         <b>Value setted:</b> "{value}"

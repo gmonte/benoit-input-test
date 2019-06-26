@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import InputText from '../views/InputText'
 import InputHidden from '../views/InputHidden'
 
@@ -17,8 +17,10 @@ const Routes = () => (
         </ul>
       </nav>
 
-      <Route path="/" exact component={InputText} />
-      <Route path="/hidden" component={InputHidden} />
+      <Switch>
+        <Route path="/" exact component={InputText} />
+        <Route path="/hidden" component={InputHidden} />
+      </Switch>
     </div>
   </Router>
 )
