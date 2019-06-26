@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "22d5adb15c128b672c8a75add7da060d",
+    "revision": "aa7a693357eb2bfbc82b2c3c1242bfe7",
     "url": "/benoit-input-test/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/benoit-input-test/static/js/2.2ec4df7a.chunk.js"
   },
   {
-    "revision": "479d5e7eccd3b888eba9",
-    "url": "/benoit-input-test/static/js/main.8a9050d5.chunk.js"
+    "revision": "639a68414810f6a743af",
+    "url": "/benoit-input-test/static/js/main.d4a11a12.chunk.js"
   },
   {
     "revision": "57fab4744b30fb550860",
