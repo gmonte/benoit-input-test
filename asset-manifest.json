@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/gmonte/benoit-input-test/static/js/main.8a9050d5.chunk.js",
-    "main.js.map": "/gmonte/benoit-input-test/static/js/main.8a9050d5.chunk.js.map",
-    "runtime~main.js": "/gmonte/benoit-input-test/static/js/runtime~main.cc83ecb4.js",
-    "runtime~main.js.map": "/gmonte/benoit-input-test/static/js/runtime~main.cc83ecb4.js.map",
-    "static/js/2.2ec4df7a.chunk.js": "/gmonte/benoit-input-test/static/js/2.2ec4df7a.chunk.js",
-    "static/js/2.2ec4df7a.chunk.js.map": "/gmonte/benoit-input-test/static/js/2.2ec4df7a.chunk.js.map",
-    "index.html": "/gmonte/benoit-input-test/index.html",
-    "precache-manifest.dda124e120f718db7834302cdfed17c1.js": "/gmonte/benoit-input-test/precache-manifest.dda124e120f718db7834302cdfed17c1.js",
-    "service-worker.js": "/gmonte/benoit-input-test/service-worker.js"
+    "main.js": "/benoit-input-test/static/js/main.8a9050d5.chunk.js",
+    "main.js.map": "/benoit-input-test/static/js/main.8a9050d5.chunk.js.map",
+    "runtime~main.js": "/benoit-input-test/static/js/runtime~main.773e826a.js",
+    "runtime~main.js.map": "/benoit-input-test/static/js/runtime~main.773e826a.js.map",
+    "static/js/2.2ec4df7a.chunk.js": "/benoit-input-test/static/js/2.2ec4df7a.chunk.js",
+    "static/js/2.2ec4df7a.chunk.js.map": "/benoit-input-test/static/js/2.2ec4df7a.chunk.js.map",
+    "index.html": "/benoit-input-test/index.html",
+    "precache-manifest.c700423580dd658e12b3839f64bff4e0.js": "/benoit-input-test/precache-manifest.c700423580dd658e12b3839f64bff4e0.js",
+    "service-worker.js": "/benoit-input-test/service-worker.js"
   }
 }
