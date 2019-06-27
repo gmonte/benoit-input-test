@@ -23,6 +23,7 @@ class InputHidden extends PureComponent {
         readOnly: true
       }),
       () => {
+        // timeout prevent that focus() open the mobile keyboard
         setTimeout(() => {
           if (this.inputRef.current) {
             this.inputRef.current.focus()
