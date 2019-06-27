@@ -2,11 +2,13 @@ import React, { useState, useRef, useEffect } from 'react'
 
 const InputHidden = () => {
   const [value, setValue] = useState('')
-  const [readOnly, setReadOnly] = useState(false)
+  const [readOnly, setReadOnly] = useState(true)
   const inputRef = useRef(null)
 
   const setFocus = () => {
-    setReadOnly(true)
+    if (!readOnly) {
+      setReadOnly(true)
+    }
     setTimeout(() => {
       inputRef.current.focus()
       setTimeout(() => {
@@ -17,7 +19,7 @@ const InputHidden = () => {
 
   useEffect(() => {
     setFocus()
-  }, [])
+  })
 
   return (
     <div>
