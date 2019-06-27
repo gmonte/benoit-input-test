@@ -1,49 +1,70 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { PureComponent, createRef } from 'react'
 
-const InputHidden = () => {
-  const [value, setValue] = useState('')
-  const [readOnly, setReadOnly] = useState(true)
-  const inputRef = useRef(null)
+class InputHidden extends PureComponent {
+  constructor(props) {
+    super(props)
 
-  const setFocus = () => {
-    if (!readOnly) {
-      setReadOnly(true)
+    this.state = {
+      readOnly: false,
+      value: ''
     }
-    setTimeout(() => {
-      inputRef.current.focus()
-      setTimeout(() => {
-        setReadOnly(false)
-      }, 50)
-    }, 100)
+
+    this.inputRef = createRef()
   }
 
-  useEffect(() => {
-    setFocus()
-  })
+  componentDidMount() {
+    this.setFocus()
+  }
 
-  return (
-    <div>
-      <input
-        readOnly={readOnly}
-        ref={inputRef}
-        style={{
-          width: 0,
-          height: 0,
-          opacity: 0,
-          position: 'absolute',
-          overflow: 'hidden',
-          border: '1px solid transparent'
-        }}
-        value={value}
-        onChange={({ target: { value: text } }) => setValue(text)}
-        onBlur={setFocus}
-      />
-      <p>
-        <b>Setted value:</b> "{value}"
-      </p>
-      {readOnly ? <p>setting focus...</p> : null}
-    </div>
-  )
+  setFocus = () => {
+    this.setState(
+      prevState => ({
+        ...prevState,
+        readOnly: true
+      }),
+      () => {
+        setTimeout(() => {
+          if (this.inputRef.current) {
+            this.inputRef.current.focus()
+            this.setState(prevState => ({
+              ...prevState,
+              readOnly: false
+            }))
+          }
+        }, 50)
+      }
+    )
+  }
+
+  render() {
+    const { readOnly, value } = this.state
+
+    return (
+      <div>
+        <input
+          readOnly={readOnly}
+          ref={this.inputRef}
+          style={{
+            width: 0,
+            height: 0,
+            opacity: 0,
+            position: 'absolute',
+            overflow: 'hidden',
+            border: '1px solid transparent'
+          }}
+          value={value}
+          onChange={({ target: { value: text } }) =>
+            this.setState({ value: text })
+          }
+          onBlur={this.setFocus}
+        />
+        <p>
+          <b>Setted value:</b> "{value}"
+        </p>
+        {readOnly ? <p>setting focus...</p> : null}
+      </div>
+    )
+  }
 }
 
 export default InputHidden
