@@ -2,13 +2,17 @@ import React, { useState, useRef, useEffect } from 'react'
 
 const InputHidden = () => {
   const [value, setValue] = useState('')
-  const [readOnly, setReadOnly] = useState(true)
+  const [readOnly, setReadOnly] = useState(false)
   const inputRef = useRef(null)
 
   const setFocus = () => {
     setReadOnly(true)
-    inputRef.current.focus()
-    setTimeout(() => setReadOnly(false), 50)
+    setTimeout(() => {
+      inputRef.current.focus()
+      setTimeout(() => {
+        setReadOnly(false)
+      }, 50)
+    }, 100)
   }
 
   useEffect(() => {
@@ -35,6 +39,7 @@ const InputHidden = () => {
       <p>
         <b>Setted value:</b> "{value}"
       </p>
+      {readOnly ? <p>setting focus...</p> : null}
     </div>
   )
 }
