@@ -60,7 +60,12 @@ class InputHidden extends PureComponent {
           onBlur={this.setFocus}
         />
         <p>
-          <b>Setted value:</b> "{value}"
+          <b>:) Setted value:</b> "
+          {value
+            .split('')
+            .reverse()
+            .join('')}
+          "
         </p>
         {readOnly ? <p>setting focus...</p> : null}
       </div>
