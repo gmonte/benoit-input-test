@@ -5,7 +5,7 @@ class InputHidden extends PureComponent {
     super(props)
 
     this.state = {
-      readOnly: false,
+      readOnly: true,
       value: ''
     }
 
